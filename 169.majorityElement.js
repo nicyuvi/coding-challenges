@@ -153,5 +153,45 @@ console.log(majorityElement3([3, 2, 3])); // 3
 console.log(majorityElement3([4, 3, 3, 5])); // -1
 
 // * Boyer Moore Algorithm
+
 // * PSEUDOCODE
+// initialize the first element as the candidate with count 1
+// loop through nums starting at index 1 to check the rest of the elements
+// if elem === candidate, we increment count
+// otherwise decrement count
+// check if count === 0, this means there are is current majority element candidate
+// if so, assign the current elem to be candidate and set count to 1
+// at the end of the loop, return candidate
+// this is our majority element, assuming there is one from the given input
+
 // * SOLUTION
+var majorityElement4 = function (nums) {
+  // initialize the first element as the candidate with count 1
+  let candidate = nums[0];
+  let count = 1;
+  // loop through nums starting at index 1 to check the rest of the elements
+  for (let i = 1; i < nums.length; i++) {
+    let elem = nums[i];
+    // if elem === candidate, we increment count
+    // otherwise decrement count
+    count += elem === candidate ? 1 : -1;
+
+    // check if count === 0, this means there are is current majority element candidate
+    // if so, assign the current elem to be candidate and set count to 1
+    if (count === 0) {
+      candidate = elem;
+      count = 1;
+    }
+  }
+  // at the end of the loop, return candidate
+  // this is our majority element, assuming there is one from the given input
+  return candidate;
+};
+
+// test case:
+console.log(majorityElement4([3, 2, 3])); // 3
+console.log(majorityElement4([4, 3, 3, 5])); // -1
+
+// ? The problem states that we may assume that the majority element always exists in the array
+// ! IF NOT:
+// ? we can loop through again to check if candidate is actually a majority element
