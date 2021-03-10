@@ -1,6 +1,6 @@
-/* Brute Force */
+// * Brute Force
 
-// PSEUDOCODE:
+// * PSEUDOCODE:
 // define half the total number of elements from our input array.
 
 // first check if there is only one input. if so, return the input.
@@ -19,7 +19,7 @@
 
 // otherwise there is no majority element and we return -1;
 
-// SOLUTION:
+// * SOLUTION:
 function majorityElement1(nums) {
   // define half the total number of elements from our input array.
   let halfCount = nums.length / 2;
@@ -49,9 +49,9 @@ function majorityElement1(nums) {
 console.log(majorityElement1([3, 2, 3])); // 3
 console.log(majorityElement1([4, 3, 3, 5])); // -1
 
-/* HashMap - One Loop */
+// * HashMap - One Loop
 
-// PSEUDOCODE:
+// * PSEUDOCODE:
 // define half the total number of elements from our input array.
 
 // declare our map.
@@ -64,7 +64,7 @@ console.log(majorityElement1([4, 3, 3, 5])); // -1
 
 // if there is no majority element in the input, we return -1.
 
-// SOLUTION:
+// * SOLUTION:
 function majorityElement2(nums) {
   // define half the total number of elements from our input array.
   let halfCount = nums.length / 2;
@@ -102,9 +102,9 @@ function majorityElement2(nums) {
 console.log(majorityElement2([3, 2, 3])); // 3
 console.log(majorityElement2([4, 3, 3, 5])); // -1
 
-/* HashMap - Two Loops */
+// * HashMap - Two Loops
 
-// PSEUDOCODE:
+// * PSEUDOCODE:
 // define half the total number of elements from our input array .
 
 // declare our map.
@@ -118,7 +118,7 @@ console.log(majorityElement2([4, 3, 3, 5])); // -1
 
 // if there is no majority element in the input, we return -1.
 
-// SOLUTION:
+// * SOLUTION:
 function majorityElement3(nums) {
   // define half the total number of elements from our input array.
   let halfCount = nums.length / 2;
@@ -151,3 +151,7 @@ function majorityElement3(nums) {
 // test case:
 console.log(majorityElement3([3, 2, 3])); // 3
 console.log(majorityElement3([4, 3, 3, 5])); // -1
+
+// * Boyer Moore Algorithm
+// * PSEUDOCODE
+// * SOLUTION
