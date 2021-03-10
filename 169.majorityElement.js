@@ -1,8 +1,57 @@
 /* Brute Force */
 
+// PSEUDOCODE:
+// define half the total number of elements from our input array.
+
+// first check if there is only one input. if so, return the input.
+
+// loop through nums and declare a counter:
+
+// loop through nums a second time and compare the elements from both loops:
+
+// if the elements from both loops are the same value, we increment our counter.
+// this keeps track of the number of occurrences of each element in nums
+
+// once we count the number of occurrences for the given element,
+// we check if the element occurs more than half the total number of elements from nums
+
+// if true, we can return that element
+
+// otherwise there is no majority element and we return -1;
+
+// SOLUTION:
+function majorityElement1(nums) {
+  // define half the total number of elements from our input array.
+  let halfCount = nums.length / 2;
+
+  // first check if there is only one input. if so, return the input.
+  if (nums.length === 1) return nums[0];
+
+  // loop through nums and declare a counter.
+  for (let num of nums) {
+    let counter = 0;
+    // loop through nums a second time and compare the elements from both loops.
+    for (let elem of nums) {
+      // if the elements from both loops are the same value, we increment our counter.
+      // this keeps track of the number of occurrences of each element in nums
+      if (num === elem) counter++;
+    }
+    // once we count the number of occurences for the given element,
+    // we check if the element occurs more than half the total number of elements from nums
+    // if true, we can return that element
+    if (counter > halfCount) return num;
+  }
+  // otherwise there is no majority element and we return -1;
+  return -1;
+}
+
+// test case:
+console.log(majorityElement1([3, 2, 3])); // 3
+console.log(majorityElement1([4, 3, 3, 5])); // -1
+
 /* HashMap - One Loop */
 
-// Pseudocode:
+// PSEUDOCODE:
 // define half the total number of elements from our input array.
 
 // declare our map.
@@ -15,7 +64,7 @@
 
 // if there is no majority element in the input, we return -1.
 
-// Solution:
+// SOLUTION:
 function majorityElement2(nums) {
   // define half the total number of elements from our input array.
   let halfCount = nums.length / 2;
@@ -51,10 +100,11 @@ function majorityElement2(nums) {
 
 // test case:
 console.log(majorityElement2([3, 2, 3])); // 3
+console.log(majorityElement2([4, 3, 3, 5])); // -1
 
 /* HashMap - Two Loops */
 
-// Pseudocode:
+// PSEUDOCODE:
 // define half the total number of elements from our input array .
 
 // declare our map.
@@ -68,7 +118,7 @@ console.log(majorityElement2([3, 2, 3])); // 3
 
 // if there is no majority element in the input, we return -1.
 
-// Solution:
+// SOLUTION:
 function majorityElement3(nums) {
   // define half the total number of elements from our input array.
   let halfCount = nums.length / 2;
@@ -100,3 +150,4 @@ function majorityElement3(nums) {
 
 // test case:
 console.log(majorityElement3([3, 2, 3])); // 3
+console.log(majorityElement3([4, 3, 3, 5])); // -1
