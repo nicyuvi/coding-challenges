@@ -213,7 +213,7 @@ function majorityElement5(nums) {
   return -1;
 }
 
-// test casess:
+// test cases:
 console.log('Solution 5: ', majorityElement5([3, 2, 3])); // Solution 4: 3
 console.log('Solution 5: ', majorityElement5([4, 3, 3, 5])); // Solution 4: -1
 // * here our solution correctly prints out -1 to signify there is no majority element
